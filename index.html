@@ -1,0 +1,550 @@
+<!-- Как обрабатывать страницу -->
+<!DOCTYPE html>
+<!-- Язык содержимого -->
+<html lang="ru">
+<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+	<head>
+		<!-- Заголовок страницы в браузере -->
+		<title>Cuda</title>
+		<!-- Подключение CSS -->
+		<link rel="stylesheet" href="CSS/Style.css">
+		<!-- Кодировка документа -->
+		<meta http-equiv="Content type" content="text/html;charset=UTF-8"/>
+		<!-- Подключение шрифтов -->
+		<link href="https://fonts.googleapis.com/css2?family=Damion&family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+		<!-- Адаптивная верстка -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Подключение jQuery -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Описание страницы для поиска в гугле -->
+		<meta name="description" content="Описание страницы">
+	</head>
+	<!-- Отображаемое тело страницы -->
+	<body>
+
+<svg style="display: none;">
+			
+			<symbol id="facebook" viewBox="0 0 96.124 96.123">
+				<g>
+					<path d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803
+		c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654
+		c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246
+		c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z"/>
+				</g>
+			</symbol>
+
+			<symbol id="twitter" viewBox="0 0 310 310">
+				<g>
+					<path d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73
+		c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783
+		c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598
+		C101.163,99.244,58.83,76.863,29.76,41.204c-1.036-1.271-2.632-1.956-4.266-1.825c-1.635,0.128-3.104,1.05-3.93,2.467
+		c-5.896,10.117-9.013,21.688-9.013,33.461c0,16.035,5.725,31.249,15.838,43.137c-3.075-1.065-6.059-2.396-8.907-3.977
+		c-1.529-0.851-3.395-0.838-4.914,0.033c-1.52,0.871-2.473,2.473-2.513,4.224c-0.007,0.295-0.007,0.59-0.007,0.889
+		c0,23.935,12.882,45.484,32.577,57.229c-1.692-0.169-3.383-0.414-5.063-0.735c-1.732-0.331-3.513,0.276-4.681,1.597
+		c-1.17,1.32-1.557,3.16-1.018,4.84c7.29,22.76,26.059,39.501,48.749,44.605c-18.819,11.787-40.34,17.961-62.932,17.961
+		c-4.714,0-9.455-0.277-14.095-0.826c-2.305-0.274-4.509,1.087-5.294,3.279c-0.785,2.193,0.047,4.638,2.008,5.895
+		c29.023,18.609,62.582,28.445,97.047,28.445c67.754,0,110.139-31.95,133.764-58.753c29.46-33.421,46.356-77.658,46.356-121.367
+		c0-1.826-0.028-3.67-0.084-5.508c11.623-8.757,21.63-19.355,29.773-31.536c1.237-1.85,1.103-4.295-0.33-5.998
+		C307.394,57.037,305.009,56.486,302.973,57.388z"/>
+				</g>
+			</symbol>
+
+			<symbol id="linkedin" viewBox="0 0 510 510">
+				<g>
+					<path d="M459,0H51C22.95,0,0,22.95,0,51v408c0,28.05,22.95,51,51,51h408c28.05,0,51-22.95,51-51V51C510,22.95,487.05,0,459,0z
+			 M153,433.5H76.5V204H153V433.5z M114.75,160.65c-25.5,0-45.9-20.4-45.9-45.9s20.4-45.9,45.9-45.9s45.9,20.4,45.9,45.9
+			S140.25,160.65,114.75,160.65z M433.5,433.5H357V298.35c0-20.399-17.85-38.25-38.25-38.25s-38.25,17.851-38.25,38.25V433.5H204
+			V204h76.5v30.6c12.75-20.4,40.8-35.7,63.75-35.7c48.45,0,89.25,40.8,89.25,89.25V433.5z"/>
+				</g>
+			</symbol> 
+</svg>
+
+
+
+
+
+<header class="header">
+	<div class="container">
+		<div class="header__inner">	
+
+			<div class="header__logo">
+				<img src="Img/Welcome/logo.png" alt="">
+			</div>
+
+			<nav>
+				<a href="" class="nav__link">Home</a>
+				<a href="" class="nav__link">About</a>
+				<a href="" class="nav__link">Work</a>
+				<a href="" class="nav__link">Blog</a>
+				<a href="" class="nav__link">Contact</a>
+			</nav>
+
+		</div>
+	</div>
+</header>
+
+
+
+
+<div class="intro">
+	<div class="container">
+		<div class="intro__inner">
+
+			<h1 class="intro__title">
+				Hi there! We are the new kids on the block 
+				and we build awesome websites and mobile apps.
+			</h1>
+			<a href="" class="btn btn--orange">Work with us</a>
+		
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="services">
+	<div class="container">
+		
+
+		<div class="services__title">
+			Services we provide
+		</div>
+		<div class="line line--services">
+			
+		</div>
+		<div class="services__subtitle">
+			We are working with both individuals and businesses from all over the globe 
+			to create awesome websites and applications.
+		</div>
+
+
+<div class="services__items">
+	<div class="services__item">
+			<div class="service__img">
+				<img src="Img/Services/Flag.png" alt="">
+			</div>
+			<div class="service__title">
+				Branding
+			</div>
+			<div class="service__subtitle">
+				Lorem ipsum dolor sit amet, 
+				consectetuer adipiscing elit, sed diam nonummy nibh.
+			</div>
+		</div>
+
+		<div class="services__item">
+			<div class="service__img">
+				<img src="Img/Services/Crayon.png" alt="">
+			</div>
+			<div class="service__title">
+				Design
+			</div>
+			<div class="service__subtitle">
+				Sed ut perspiciatis unde omnis iste natus error sit voluptatem  
+			</div>
+		</div>
+
+		<div class="services__item">
+			<div class="service__img">
+				<img src="Img/Services/Gears.png" alt="">
+			</div>
+			<div class="service__title">
+				Development
+			</div>
+			<div class="service__subtitle">
+				At vero eos et accusamus et iusto odio dignissimos qui blanditiis praesentium.
+			</div>
+		</div>
+
+		<div class="services__item">
+			<div class="service__img">
+				<img src="Img/Services/Rocket.png" alt="">
+			</div>
+			<div class="service__title">
+				Rocket Science
+			</div>
+			<div class="service__subtitle">
+				Et harum quidem rerum est et expedita distinctio. Nam libero tempore.
+			</div>
+		</div>
+</div>
+		
+	</div>
+</div>
+
+
+<div class="team">
+	<div class="container">
+		
+ 		<div class="team__title">
+ 			Meet Our Beautiful Team
+ 		</div>
+ 		<div class="line line--team"></div>
+ 		<div class="team__subtitle">
+ 			We are a small team of designers and developers, who help brands with big ideas.
+ 		</div>
+
+ 		<div class="team__items">
+
+ 			<div class="team__item">
+ 				<img src="Img/Team/team-1.jpg" alt="" class="member__pic">
+ 				<div class="member__name">Anne Hathaway</div>
+ 				<div class="member__prof">CEO / Marketing Guru</div>
+ 				<div class="memder__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</div>
+ 				
+ 				<div class="social">
+ 					<a class="social__item" href="#" target="_blank">
+						<svg class="social__icon">
+							<use xlink:href="#facebook"></use>
+						</svg>
+					</a>
+					<a class="social__item" href="#" target="_blank">
+						<svg class="social__icon">
+							<use xlink:href="#twitter"></use>
+						</svg>
+					</a>
+					<a class="social__item" href="#" target="_blank">
+						<svg class="social__icon">
+							<use xlink:href="#linkedin"></use>
+						</svg>
+					</a>
+ 				</div>
+ 			</div>
+
+ 			<div class="team__item">
+ 				<img src="Img/Team/team-1.jpg" alt="" class="member__pic">
+ 				<div class="member__name">Olivia Wilde</div>
+ 				<div class="member__prof">Lead Designer</div>
+ 				<div class="memder__text">Nemo enim ipsam voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem nesciunt.</div>
+ 				
+ 				<div class="social">
+ 					<a class="social__item" href="#" target="_blank">
+						<svg class="social__icon">
+							<use xlink:href="#facebook"></use>
+						</svg>
+					</a>
+					<a class="social__item" href="#" target="_blank">
+						<svg class="social__icon">
+							<use xlink:href="#twitter"></use>
+						</svg>
+					</a>
+					<a class="social__item" href="#" target="_blank">
+						<svg class="social__icon">
+							<use xlink:href="#linkedin"></use>
+						</svg>
+					</a>
+ 				</div>
+ 			</div>
+
+ 			<div class="team__item">
+ 				<img src="Img/Team/team-1.jpg" alt="" class="member__pic">
+ 				<div class="member__name">Ashley Greene</div>
+ 				<div class="member__prof">CEO / Developer</div>
+ 				<div class="memder__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</div>
+ 				
+ 				<div class="social">
+ 					<a class="social__item" href="#" target="_blank">
+						<svg class="social__icon">
+							<use xlink:href="#facebook"></use>
+						</svg>
+					</a>
+					<a class="social__item" href="#" target="_blank">
+						<svg class="social__icon">
+							<use xlink:href="#twitter"></use>
+						</svg>
+					</a>
+					<a class="social__item" href="#" target="_blank">
+						<svg class="social__icon">
+							<use xlink:href="#linkedin"></use>
+						</svg>
+					</a>
+ 				</div>
+ 			</div>
+
+ 			<div class="team__item">
+ 				<img src="Img/Team/team-1.jpg" alt="" class="member__pic">
+ 				<div class="member__name">Kate Upton</div>
+ 				<div class="member__prof">Creative Director</div>
+ 				<div class="memder__text">Duis aute irure dolor in in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat non diam proident.</div>
+ 				
+ 				<div class="social">
+ 					<a class="social__item" href="#" target="_blank">
+						<svg class="social__icon">
+							<use xlink:href="#facebook"></use>
+						</svg>
+					</a>
+					<a class="social__item" href="#" target="_blank">
+						<svg class="social__icon">
+							<use xlink:href="#twitter"></use>
+						</svg>
+					</a>
+					<a class="social__item" href="#" target="_blank">
+						<svg class="social__icon">
+							<use xlink:href="#linkedin"></use>
+						</svg>
+					</a>
+ 				</div>
+ 			</div>
+ 		</div>
+	</div><!-- Container -->
+</div><!-- Team -->
+
+
+<div class="skills">
+	<div class="container">
+		
+ 	<div class="skills__title">We Got Skills!</div>
+ 	<div class="line line--skills"></div>
+ 	<div class="skills__subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+
+ 	<div class="skills__items">
+
+ 		<div class="skills__item">
+ 			<div class="counter">
+ 				
+ 				 <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="160" height="160"
+         			xmlns="http://www.w3.org/2000/svg">
+        				<!--    Белый круг    -->
+        			<circle class="circle-chart__background" stroke="#efefef" stroke-width="2" fill="none" cx="16.91549431"
+                	cy="16.91549431" r="15.91549431"/>
+        				<!--    Синий круг // парамент 'stroke-dasharray' отвечает на сколько % будет заполнен круг ( у нас на 90% из 100%)    -->
+       			<circle class="circle-chart__circle" stroke="#00acc1" stroke-width="2" stroke-dasharray="90,100"
+                	stroke-linecap="square" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431"/>
+        			<g class="circle-chart__info">
+            		<text class="circle-chart__percent" x="17.5" y="16.5" alignment-baseline="central"
+                  text-anchor="middle" font-size="8">90%
+            		</text>
+        			</g>
+    			</svg>
+
+ 			</div>
+ 			<div class="item__title">Web design</div>
+ 		</div>
+
+ 		<div class="skills__item">
+ 			<div class="counter">
+ 				
+ 				 <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="160" height="160"
+         			xmlns="http://www.w3.org/2000/svg">
+        				<!--    Белый круг    -->
+        			<circle class="circle-chart__background" stroke="#efefef" stroke-width="2" fill="none" cx="16.91549431"
+                	cy="16.91549431" r="15.91549431"/>
+        				<!--    Синий круг // парамент 'stroke-dasharray' отвечает на сколько % будет заполнен круг ( у нас на 75% из 100%)    -->
+       			<circle class="circle-chart__circle" stroke="#bb487d" stroke-width="2" stroke-dasharray="75,100"
+                	stroke-linecap="square" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431"/>
+        			<g class="circle-chart__info">
+            		<text class="circle-chart__percent" x="17.5" y="16.5" alignment-baseline="central"
+                  text-anchor="middle" font-size="8">75%
+            		</text>
+        			</g>
+    			</svg>
+
+ 			</div>
+ 			<div class="item__title">Html / css</div>
+ 		</div>
+
+ 		<div class="skills__item">
+ 			<div class="counter">
+ 				
+ 				 <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="160" height="160"
+         			xmlns="http://www.w3.org/2000/svg">
+        				<!--    Белый круг    -->
+        			<circle class="circle-chart__background" stroke="#efefef" stroke-width="2" fill="none" cx="16.91549431"
+                	cy="16.91549431" r="15.91549431"/>
+        				<!--    Синий круг // парамент 'stroke-dasharray' отвечает на сколько % будет заполнен круг ( у нас на % из 100%)    -->
+       			<circle class="circle-chart__circle" stroke="#71c6a8" stroke-width="2" stroke-dasharray="70,100"
+                	stroke-linecap="square" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431"/>
+        			<g class="circle-chart__info">
+            		<text class="circle-chart__percent" x="17.5" y="16.5" alignment-baseline="central"
+                  text-anchor="middle" font-size="8">70%
+            		</text>
+        			</g>
+    			</svg>
+
+ 			</div>
+ 			<div class="item__title">Graphic design</div>
+ 		</div>
+
+ 		<div class="skills__item">
+ 			<div class="counter">
+ 				
+ 				 <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="160" height="160"
+         			xmlns="http://www.w3.org/2000/svg">
+        				<!--    Белый круг    -->
+        			<circle class="circle-chart__background" stroke="#efefef" stroke-width="2" fill="none" cx="16.91549431"
+                	cy="16.91549431" r="15.91549431"/>
+        				<!--    Синий круг // парамент 'stroke-dasharray' отвечает на сколько % будет заполнен круг ( у нас на 90% из 100%)    -->
+       			<circle class="circle-chart__circle" stroke="#d27c4f" stroke-width="2" stroke-dasharray="85,100"
+                	stroke-linecap="square" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431"/>
+        			<g class="circle-chart__info">
+            		<text class="circle-chart__percent" x="17.5" y="16.5" alignment-baseline="central"
+                  text-anchor="middle" font-size="8">85%
+            		</text>
+        			</g>
+    			</svg>
+
+ 			</div>
+ 			<div class="item__title">UI / UX</div>
+ 		</div>
+
+ 	</div>
+
+	</div><!-- Container -->
+</div><!-- Skills -->
+
+
+
+
+
+
+<div class="portolio">
+	<div class="container">
+
+	<div class="portfolio__title">Our portfolio</div>
+ 	<div class="line line--portfolio"></div>
+ 	<div class="portfolio__subtitle">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit, sed quia non numquam</div>
+
+	<div class="portfolio__selectors" id="myBtnContainer">
+  		<button class="btn--selector active" onclick="filterSelection('all')"> All</button>
+  		<button class="btn--selector" onclick="filterSelection('web')"> Web</button>
+  		<button class="btn--selector" onclick="filterSelection('apps')"> Apps</button>
+  		<button class="btn--selector" onclick="filterSelection('icons')"> Icons</button>
+	</div>
+
+
+<div class="filter__items">
+	<div class="filter web">
+ 		<img src="Img/Portfolio/1.png" alt="" class="portfolio__pic">
+ 		<div class="portfolio__item__title">Isometric Perspective Mock-Up</div>
+ 	</div>
+ 	<div class="filter web">
+ 		<img src="Img/Portfolio/2.png" alt="" class="portfolio__pic">
+ 		<div class="portfolio__item__title">Time Zone App UI</div>
+ 	</div>
+ 	<div class="filter apps">
+ 		<img src="Img/Portfolio/3.png" alt="" class="portfolio__pic">
+ 		<div class="portfolio__item__title">Viro Media Players UI</div>
+ 	</div>
+ 	<div class="filter icons">
+ 		<img src="Img/Portfolio/4.png" alt="" class="portfolio__pic">
+ 		<div class="portfolio__item__title">Blog / Magazine Flat UI Kit</div>
+ 	</div>
+</div>
+ 	
+<div class="btn__wrap">
+	<a href="" class="btn btn--green">Load more projects</a>
+</div>
+ 	
+		
+	</div><!-- Container -->
+</div><!-- Portfolio -->
+
+
+
+<div class="rewievs">
+	<div class="container">
+		
+		<div class="rewievs__title">What people say about us</div>
+		<div class="line line--rewievs"></div>
+		<div class="rewievs__subtitle">Our clients love us!</div>
+
+		<div class="rewievs__items">
+			<div class="rewievs__item">
+				<img src="Img/Team/team-1.jpg" alt="" class="reviewer__pic">
+				<div class="review__text">
+					<div class="reviewer__text">“Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.”</div>
+					<div class="reviewer__name">Chanel Iman</div>
+					<div class="reviewer__post">CEO of Pinterest</div>
+				</div>
+			</div>
+
+			<div class="rewievs__item">
+				<img src="Img/Team/team-1.jpg" alt="" class="reviewer__pic">
+				<div class="review__text">
+					<div class="reviewer__text">“Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.”</div>
+					<div class="reviewer__name">Chanel Iman</div>
+					<div class="reviewer__post">CEO of Pinterest</div>
+				</div>
+			</div>
+
+			<div class="rewievs__item">
+				<img src="Img/Team/team-1.jpg" alt="" class="reviewer__pic">
+				<div class="review__text">
+					<div class="reviewer__text">“Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.”</div>
+					<div class="reviewer__name">Chanel Iman</div>
+					<div class="reviewer__post">CEO of Pinterest</div>
+				</div>
+			</div>
+
+			<div class="rewievs__item">
+				<img src="Img/Team/team-1.jpg" alt="" class="reviewer__pic">
+				<div class="review__text">
+					<div class="reviewer__text">“Nullam dapibus blandit orci, viverra gravida dui lobortis eget. Maecenas fringilla urna eu nisl scelerisque.”</div>
+					<div class="reviewer__name">Chanel Iman</div>
+					<div class="reviewer__post">CEO of Pinterest</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div><!-- Container -->
+</div><!-- Rewievs -->
+
+
+
+<div class="contact">
+	<div class="container">
+		
+		<div class="contact__title">Get in touch</div>
+		<div class="line line--contact"></div>
+		<div class="contact__subtitle">1600 Pennsylvania Ave NW, Washington, DC 20500, United States of America. Tel: (202) 456-1111</div>
+
+		<div class="contact__inner">
+			<input type="text" placeholder="Your Name*" class="input__name">
+			<input type="text" placeholder="Your Email*" class="input__mail">
+		</div>
+		<div class="text__wrap">
+			<input type="text" placeholder="Your Message*"class="input__text">
+		</div>
+		
+
+		<div class="btn__wrap">
+			<a href="" class="btn btn--blue">Load more projects</a>
+		</div>
+
+	</div><!-- Container -->
+</div><!-- Contact -->
+
+
+<footer class="footer">
+	<div class="container">
+
+		<div class="footer__inner">
+			<a href="" class="link">Facebook</a>
+			<a href="" class="link">Twitter</a>
+			<a href="" class="link">Google+</a>
+			<a href="" class="link">LinkedIn</a>
+			<a href="" class="link">Behance</a>
+			<a href="" class="link">Dribbble</a>
+			<a href="" class="link">GitHub</a>
+		</div>
+
+	</div><!-- Container -->
+</footer><!-- Footer -->
+
+
+
+
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="JS/app.js"></script>
+
+
+</body>
+
+
+
+</html>
